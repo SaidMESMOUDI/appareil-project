@@ -1,0 +1,38 @@
+<div class="col-sm-8 col-sm-offset-2">
+  <h3>Nouvel utilisateur :</h3>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmitForm()">
+    <div class="form-group">
+      <label for="firstName">Prénom </label>
+      <input id="firstName" type="text" class="form-control" formControlName="firstName"/>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Nom </label>
+      <input id="lastName" type="text" class="form-control" formControlName="lastName"/>
+    </div>
+    <div class="form-group">
+      <label for="email">Adresse mail </label>
+      <input id="email" type="email" class="form-control" formControlName="email"/>
+    </div>
+    <div class="form-group">
+      <label for="drinkPreference">Quelle boisson préférez-vous ? </label>
+      <input list="drinkPreference" class="form-control" formControlName="drinkPreference"/>
+      <datalist id="drinkPreference">
+        <option value="Coca Cola">
+        <option value="Pepsi">
+        <option value="Ice Tea">
+        <option value="Oasis">
+      </datalist>
+    </div>
+    <div class="form-group">
+      <label for="hobbies">Hobbies </label>
+      <select id="hobbies" class="form-control" formControlName="hobbies" multiple>
+        <option value="Dévloppement informatique">Dévloppement informatique</option>
+        <option value="Dégustation de café">Dégustation de café</option>
+        <option value="Foot ball">Foot ball</option>
+        <option value="Cinéma">Cinéma</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="userForm.invalid">Soumettre</button>
+  </form>
+</div>
+
